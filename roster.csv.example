@@ -1,0 +1,7 @@
+# Example Roster Format (Keep the actual roster.csv gitignored)
+# name,email,role,rollNumber,groupName,tutorName
+Alex Rivera,alex.rivera@university.edu,STUDENT,STU-2026-001,Group 01 — Mobility & DeepTech,Group 01 Agent Tutor
+Jordan Chen,jordan.chen@university.edu,STUDENT,STU-2026-002,Group 01 — Mobility & DeepTech,Group 01 Agent Tutor
+Morgan Patel,morgan.patel@university.edu,STUDENT,STU-2026-003,Group 02 — Corporate Synergies,Group 02 Agent Tutor
+Samira Khan,samira.khan@university.edu,STUDENT,STU-2026-004,Group 02 — Corporate Synergies,Group 02 Agent Tutor
+Dr. Elena Rostova,elena.rostova@university.edu,INSTRUCTOR,FAC-ENT3805,,

@@ -1,0 +1,21 @@
+{
+  "name": "corporate-startup-tutor",
+  "version": "1.0.0",
+  "description": "Corporate-Startup AI Tutor for BML Munjal University course ENT 3805",
+  "scripts": {
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "seed": "cd server && npm run seed",
+    "test": "cd server && npm run test",
+    "install:all": "npm --prefix server install && npm --prefix client install"
+  },
+  "keywords": [
+    "bml-munjal-university",
+    "ent3805",
+    "corporate-startup",
+    "ai-tutor",
+    "synergies"
+  ],
+  "author": "ENT 3805 Student Team",
+  "license": "MIT"
+}
