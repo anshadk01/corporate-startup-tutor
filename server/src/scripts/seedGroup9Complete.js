@@ -236,28 +236,29 @@ export const seedGroup9Complete = async () => {
       title: "Models of Collaboration: Accelerators, CVCs & Co-Innovation",
       author: prince,
       date: "2026-08-17",
-      rawNotes: "Analyzed Weiblen & Chesbrough (2015) 4 engagement typologies: Corporate Venture Capital (Outside-In, Equity), Corporate Incubation (Inside-Out, Equity), Outside-In Startup Programs (Non-Equity, e.g. AT&T Foundry), and Inside-Out Platform Programs (Non-Equity, e.g. SAP Startup Focus on HANA). Group 09 formed to study Pravega Co-Lab and VuNet Systems.",
+      rawNotes: "Analyzed Weiblen & Chesbrough (2015) 4 engagement typologies: Corporate Venture Capital (Outside-In, Equity), Corporate Incubation (Inside-Out, Equity), Outside-In Startup Programs (Non-Equity, e.g. AT&T Foundry, Siemens TTB), and Inside-Out Platform Programs (Non-Equity, e.g. SAP Startup Focus on HANA, PayPal Blueprint, Panasonic LiEDO battery platform). Group 09 formed to study Pravega Co-Lab and VuNet Systems.",
       keyPoints: [
         "Corporate Venture Capital (CVC) provides strategic intelligence and market optionality beyond direct financial returns.",
         "Outside-In startup programs compress proof-of-concept timelines to 12 weeks through structured sandboxes.",
-        "Platform models (e.g. SAP HANA, Microsoft BizSpark) allow corporates to build extensive developer ecosystems around core enterprise software."
+        "Platform models (e.g. SAP HANA, Panasonic LiEDO, Microsoft BizSpark) allow corporates to build extensive developer ecosystems around core enterprise hardware and software."
       ],
       openQuestion: "Under what conditions should a corporate take an equity stake in a startup rather than maintaining an arm's-length commercial client-vendor relationship?",
       studentNotes: "Prince: Finalized Group 09 term project focus on Corporate Synergies & Pravega Co-Lab."
     },
     {
       sessionNumber: 4,
-      title: "Guest Interaction: Incubation & Corporate Accelerator Leaders",
+      title: "Industry Masterclass: Mr. Manish Misra, CIO at Panasonic India (Panasonic IIC & IGNITION Strategy)",
       author: nitin,
-      date: "2026-08-24",
-      rawNotes: "Interactive guest lecture with corporate incubation and accelerator program managers. Explored how enterprise accelerators source cohorts, evaluate tech readiness levels (TRL), and bridge the chasm between a completed sandbox POC and enterprise-wide rollouts. Discussed pilot KPIs and executive sponsorship.",
+      date: "2026-08-26",
+      rawNotes: "Special industry masterclass with Mr. Manish Misra, Chief Innovation Officer at Panasonic India, held in Hub-C, Gateway Building B at 11:00 AM. Manish shared insights into how Panasonic balances strict Japanese multinational governance with agile startup collaboration. Deep dive into the Panasonic IIC (India Innovation Center) and the ongoing Panasonic IGNITION corporate accelerator strategy: sourcing Indian deep-tech ventures in smart living, clean energy, and EV battery telemetry; providing hardware testbeds and APAC distribution networks; and the LiEDO networked energy storage platform (Weiblen & Chesbrough 2015). Also emphasized strict corporate social-media posting guidelines and NDA protocols prior to pilot commercialization.",
       keyPoints: [
-        "Accelerators serve as organizational shock absorbers, shielding startups from enterprise bureaucracy during initial pilot phases.",
-        "A successful POC requires a predefined business-unit sponsor who has committed budget for post-pilot deployment.",
-        "Startups must demonstrate quantifiable unit economics and security compliance before moving to production data."
+        "Panasonic India utilizes its India Innovation Center (IIC) and the IGNITION program as an organizational shock absorber, shielding agile startups from multinational corporate bureaucracy.",
+        "Under the ongoing IGNITION strategy, Panasonic provides hardware testbeds, manufacturing engineering, and APAC market access in exchange for validated clean-tech and IoT solutions.",
+        "The LiEDO platform represents an Inside-Out model where Panasonic exposes networked energy storage infrastructure for external startups to build smart energy analytics.",
+        "Corporate governance and IP protection require strict communication protocols—explaining corporate social media embargoes before pilot commercialization."
       ],
-      openQuestion: "How do accelerator managers ensure business-unit heads take ownership of startup technology after the initial demo day?",
-      studentNotes: "Nitin: Clear sponsorship from a P&L owner is the single biggest predictor of post-pilot commercial contracts."
+      openQuestion: "How does a multinational conglomerate like Panasonic determine whether an incubated energy startup should remain an external supplier or be brought into corporate venture capital equity?",
+      studentNotes: "Nitin: Manish Misra emphasized solving unit-economics bottlenecks first before attempting enterprise scale across Panasonic's APAC distribution channels."
     },
     {
       sessionNumber: 5,
@@ -317,17 +318,18 @@ export const seedGroup9Complete = async () => {
     },
     {
       sessionNumber: 9,
-      title: "Industry Talk: Deep-Tech Startup Founder on Scaling with Corporates",
+      title: "Industry Guest Session: Bosch India Startup Platform & Corporate Incubation",
       author: ansh,
-      date: "2026-09-28",
-      rawNotes: "Guest lecture from a deep-tech SaaS founder on real-world experiences selling to Fortune 500 banks. Shared practical strategies for navigating SOC-2 audits, InfoSec security checklists, and enterprise sandbox procurement. Emphasized the power of finding a missionary internal champion.",
+      date: "2026-09-30",
+      rawNotes: "Special guest industry session held in Hub-B, 3rd Floor Gateway Building B, focusing on Bosch India (https://www.bosch.in) and its 'Startup Platform' incubation model (Weiblen & Chesbrough 2015). Discussed how Bosch manages 'misfit' internal R&D inventions by spinning them off into corporate incubators. Explored Bosch's 'basic rules company' status—operating under just a dozen core guidelines instead of hundreds of corporate procedural directives to shield incubated ventures from enterprise complexity. Also examined VuNet Systems scaling lessons when interfacing with large enterprise technology stacks.",
       keyPoints: [
-        "A charismatic corporate champion cannot overcome an unfavorable security audit; enterprise readiness must be built into startup architecture early.",
-        "Startups must offer modular integration APIs to avoid disrupting legacy corporate core infrastructure.",
-        "Establishing mutual executive sponsor alignment ensures ongoing budget prioritization when corporate leadership changes occur."
+        "Bosch's Startup Platform provides non-core internal inventions with seed funding, specialized coaching, and physical separation to allow rapid market pivoting.",
+        "Operating as a 'basic rules company' exempts incubated startups from heavy corporate procedural directives while maintaining compliance on core values.",
+        "Corporate incubation gives nascent ventures access to specialized industrial laboratories, engineering mentors, and customer networks that external startups lack.",
+        "Re-integrating successful ventures back into corporate divisions requires alignment with business-unit P&L roadmaps."
       ],
-      openQuestion: "How should a startup founder navigate sudden executive turnover when their primary corporate sponsor leaves the enterprise?",
-      studentNotes: "Ansh: Building multi-threaded corporate relationships across multiple business-unit stakeholders protects against single-champion departure risk."
+      openQuestion: "At what growth milestone should a corporate incubator transition an incubated venture back into a core business unit versus letting it spin off as an independent market entity?",
+      studentNotes: "Ansh: The 'basic rules company' structure at Bosch is an ideal benchmark for how Pravega Co-Lab shields VuNet from enterprise procurement friction."
     },
     {
       sessionNumber: 10,
@@ -577,7 +579,7 @@ export const seedGroup9Complete = async () => {
     groupId: group9._id,
     authorId: instructor._id,
     targetType: "WORKSPACE",
-    comment: `Prof. Kulbir Lamba (Mid-Term Audit): "Excellent progress by Group 09. All 13 sessions thoroughly reflected with strong theoretical anchoring in Yoon & Hughes (2016) and Weiblen & Chesbrough (2015). VuNet Systems field study is comprehensive."`,
+    comment: `Prof. Kulbir Lamba (Mid-Term Project Progress Review - 23 Oct 2026): "Score: 11 / 15. Please work upon the feedback given and prepare well for end sem presentations. Reach out to both sides of the dyad—interview both Pravega Ventures / corporate banking sponsors and the startup founders (VuNet Systems). Ensure empirical evidence (photos, notes, interview points) is ready for Nov 18 presentation."`,
     isInstructorFeedback: true
   });
 

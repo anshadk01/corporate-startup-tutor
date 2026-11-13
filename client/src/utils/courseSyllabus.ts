@@ -93,14 +93,16 @@ export const OFFICIAL_SESSIONS: CourseSession[] = [
   },
   {
     sessionNumber: 4,
-    title: "Guest Interaction: Incubation & Corporate Accelerator Leaders",
+    title: "Industry Masterclass: Mr. Manish Misra, CIO at Panasonic India (Panasonic IIC & IGNITION Strategy)",
     courseOutcome: "CO 1, 2",
     bloomsLevel: "BL-4 (Analysis)",
-    pedagogy: "Guest Lecture & Interactive Q&A",
+    preRead: "Meet the Visionaries: Panasonic IIC Leadership & Panasonic IGNITION Accelerator (Hub-C Gateway B)",
+    pedagogy: "Guest Lecture, Practitioner Q&A & Strategy Discussion",
     keyTopics: [
-      "Practitioner insights from corporate startup accelerators",
-      "Structuring cohorts, mentorship, and POC milestones",
-      "Transitioning from pilot to enterprise procurement"
+      "Panasonic India Innovation Center (IIC) as organizational shock absorber",
+      "Panasonic IGNITION accelerator: clean energy, smart living & EV battery telemetry",
+      "Panasonic LiEDO energy storage platform (Weiblen & Chesbrough 2015)",
+      "Navigating Japanese corporate governance & strict social media / NDA compliance"
     ]
   },
   {
@@ -156,14 +158,16 @@ export const OFFICIAL_SESSIONS: CourseSession[] = [
   },
   {
     sessionNumber: 9,
-    title: "Industry Talk: Startup Founder / Corporate Innovation Leader",
+    title: "Industry Guest Session: Bosch India Startup Platform & Corporate Incubation",
     courseOutcome: "CO 1, 2",
     bloomsLevel: "BL-4 (Analysis)",
-    pedagogy: "Practitioner Keynote & Fireside Chat",
+    preRead: "Bosch India Corporate Innovation (Hub-B Gateway B) & Basic Rules Company Model (Weiblen & Chesbrough 2015)",
+    pedagogy: "Practitioner Keynote & Case Discussion",
     keyTopics: [
-      "Real-world lessons from scaling corporate partnerships",
-      "Overcoming procurement roadblocks and slow contract cycles",
-      "Balancing startup autonomy with corporate compliance"
+      "Commercializing non-core 'misfit' inventions via corporate spin-offs",
+      "Bosch's 'basic rules company' status (12 basic rules vs hundreds of corporate directives)",
+      "Accessing specialized industrial laboratories, engineering mentors, and customer networks",
+      "VuNet Systems scaling lessons when interfacing with large enterprise technology stacks"
     ]
   },
   {
