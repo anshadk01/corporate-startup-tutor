@@ -360,9 +360,9 @@ export const GroupWorkspace: React.FC = () => {
                 return (
                   <motion.div
                     key={log._id}
-                    initial={isMotionSafe ? { opacity: 0, y: 10 } : false}
+                    initial={isMotionSafe ? { opacity: 0, y: 10 } : undefined}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={isMotionSafe ? { opacity: 0, y: -10 } : false}
+                    exit={isMotionSafe ? { opacity: 0, y: -10 } : undefined}
                     transition={{ duration: 0.2 }}
                     className="bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden"
                   >

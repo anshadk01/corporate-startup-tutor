@@ -186,7 +186,7 @@ export const PromptLog: React.FC = () => {
         isOpen={Boolean(selectedLog)}
         onClose={() => setSelectedLog(null)}
         title={selectedLog ? `Prompt Log #${selectedLog.sequenceNumber || "1"} Audit` : ""}
-        maxWidth="max-w-3xl"
+        maxWidth="3xl"
       >
         {selectedLog && (
           <div className="space-y-4 text-xs">

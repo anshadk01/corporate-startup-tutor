@@ -331,7 +331,7 @@ export const Reflections: React.FC = () => {
         isOpen={isCreateOpen}
         onClose={() => setIsCreateOpen(false)}
         title="Record ENT 3805 Class Reflection"
-        maxWidth="max-w-3xl"
+        maxWidth="3xl"
       >
         <div className="space-y-5 text-xs">
           {error && (
@@ -492,7 +492,7 @@ export const Reflections: React.FC = () => {
         isOpen={Boolean(selectedReflection)}
         onClose={() => setSelectedReflection(null)}
         title={selectedReflection ? `Session ${selectedReflection.sessionNumber}: ${selectedReflection.sessionTitle}` : ""}
-        maxWidth="max-w-2xl"
+        maxWidth="2xl"
       >
         {selectedReflection && (
           <div className="space-y-4 text-xs">

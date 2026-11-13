@@ -441,7 +441,7 @@ export const News: React.FC = () => {
         isOpen={isCurateOpen}
         onClose={() => setIsCurateOpen(false)}
         title="Curate Fortnightly Corporate-Startup Collaboration News"
-        maxWidth="max-w-3xl"
+        maxWidth="3xl"
       >
         <div className="space-y-4 text-xs">
           {error && (
@@ -632,7 +632,7 @@ export const News: React.FC = () => {
         isOpen={Boolean(selectedNews)}
         onClose={() => setSelectedNews(null)}
         title="Student Notes on Curated News"
-        maxWidth="max-w-lg"
+        maxWidth="lg"
       >
         {selectedNews && (
           <div className="space-y-4 text-xs">

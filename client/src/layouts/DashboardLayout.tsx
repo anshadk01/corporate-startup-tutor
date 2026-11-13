@@ -18,9 +18,9 @@ export const DashboardLayout: React.FC = () => {
           <AnimatePresence mode="wait">
             <motion.div
               key={location.pathname}
-              initial={isMotionSafe ? { opacity: 0, y: 6 } : false}
+              initial={isMotionSafe ? { opacity: 0, y: 6 } : undefined}
               animate={{ opacity: 1, y: 0 }}
-              exit={isMotionSafe ? { opacity: 0, y: -6 } : false}
+              exit={isMotionSafe ? { opacity: 0, y: -6 } : undefined}
               transition={{ duration: 0.18, ease: "easeOut" }}
             >
               <Outlet />
