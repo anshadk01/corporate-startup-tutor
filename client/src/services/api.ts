@@ -1,7 +1,14 @@
 import axios from "axios";
 
+// Automatically target live Render backend in production or when VITE_API_URL is set
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL ||
+  (import.meta.env.PROD
+    ? "https://corporate-startup-tutor-oids.onrender.com/api"
+    : "/api");
+
 const api = axios.create({
-  baseURL: "/api",
+  baseURL: API_BASE_URL,
   headers: {
     "Content-Type": "application/json"
   }
