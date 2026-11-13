@@ -9,6 +9,7 @@ import groupRoutes from "./routes/groupRoutes.js";
 import instructorRoutes from "./routes/instructorRoutes.js";
 import cycleRoutes from "./routes/cycleRoutes.js";
 import { seedDatabase } from "./scripts/seed.js";
+import { seedGroup9Complete } from "./scripts/seedGroup9Complete.js";
 
 dotenv.config();
 
@@ -35,6 +36,7 @@ app.get("/health", healthHandler);
 const seedHandler = async (req, res) => {
   try {
     await seedDatabase();
+    await seedGroup9Complete();
     res.json({ message: "Database reseeded successfully with ENT 3805 demo data." });
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -42,6 +44,18 @@ const seedHandler = async (req, res) => {
 };
 app.post("/api/seed", seedHandler);
 app.post("/seed", seedHandler);
+
+// Dedicated Group 09 100% Complete Seed Endpoint
+const group9SeedHandler = async (req, res) => {
+  try {
+    const result = await seedGroup9Complete();
+    res.json({ message: "Group 09 workspace 100% completed successfully!", result });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+app.post("/api/seed-group9", group9SeedHandler);
+app.post("/seed-group9", group9SeedHandler);
 
 // Mount Routes on both /api and root / for client compatibility
 const routes = [

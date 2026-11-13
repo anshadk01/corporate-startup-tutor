@@ -93,13 +93,14 @@ export const Login: React.FC = () => {
               </div>
             </button>
 
+            {/* Group 09 Members (All with password: Gymislove@1) */}
             <button
               onClick={() => {
                 setEmail("anshadhikari111@gmail.com");
                 setPassword("Gymislove@1");
               }}
               disabled={loading}
-              className="p-2.5 rounded-xl bg-slate-700/60 hover:bg-slate-700 border border-slate-600/60 text-left transition flex items-start space-x-2"
+              className="p-2.5 rounded-xl bg-slate-700/60 hover:bg-slate-700 border border-emerald-500/40 text-left transition flex items-start space-x-2"
             >
               <UserCheck className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
               <div>
@@ -109,26 +110,47 @@ export const Login: React.FC = () => {
             </button>
 
             <button
-              onClick={() => handleQuickLogin("alex.demo@university.edu")}
+              onClick={() => {
+                setEmail("harshdeep.singh.23cse@bmu.edu.in");
+                setPassword("Gymislove@1");
+              }}
               disabled={loading}
-              className="p-2.5 rounded-xl bg-slate-700/60 hover:bg-slate-700 border border-slate-600/60 text-left transition flex items-start space-x-2"
+              className="p-2.5 rounded-xl bg-slate-700/60 hover:bg-slate-700 border border-emerald-500/40 text-left transition flex items-start space-x-2"
             >
-              <UserCheck className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" />
+              <UserCheck className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
               <div>
-                <p className="text-xs font-bold text-white leading-tight">Alex Rivera</p>
-                <p className="text-[10px] text-slate-400">alex.demo@university.edu • Group 01</p>
+                <p className="text-xs font-bold text-white leading-tight">Harshdeep Singh</p>
+                <p className="text-[10px] text-slate-400">harshdeep.singh.23cse@bmu.edu.in • Group 09</p>
               </div>
             </button>
 
             <button
-              onClick={() => handleQuickLogin("morgan.demo@university.edu")}
+              onClick={() => {
+                setEmail("nitin.23cse@bmu.edu.in");
+                setPassword("Gymislove@1");
+              }}
               disabled={loading}
-              className="p-2.5 rounded-xl bg-slate-700/60 hover:bg-slate-700 border border-slate-600/60 text-left transition flex items-start space-x-2 sm:col-span-2"
+              className="p-2.5 rounded-xl bg-slate-700/60 hover:bg-slate-700 border border-emerald-500/40 text-left transition flex items-start space-x-2"
             >
-              <UserCheck className="w-4 h-4 text-amber-400 mt-0.5 flex-shrink-0" />
+              <UserCheck className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
               <div>
-                <p className="text-xs font-bold text-white leading-tight">Morgan Patel</p>
-                <p className="text-[10px] text-slate-400">STU-DEMO-03 • Group 02 Enterprise SaaS & FinTech</p>
+                <p className="text-xs font-bold text-white leading-tight">Nitin</p>
+                <p className="text-[10px] text-slate-400">nitin.23cse@bmu.edu.in • Group 09</p>
+              </div>
+            </button>
+
+            <button
+              onClick={() => {
+                setEmail("prince.malhan.23cse@bmu.edu.in");
+                setPassword("Gymislove@1");
+              }}
+              disabled={loading}
+              className="p-2.5 rounded-xl bg-slate-700/60 hover:bg-slate-700 border border-emerald-500/40 text-left transition flex items-start space-x-2"
+            >
+              <UserCheck className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
+              <div>
+                <p className="text-xs font-bold text-white leading-tight">Prince</p>
+                <p className="text-[10px] text-slate-400">prince.malhan.23cse@bmu.edu.in • Group 09</p>
               </div>
             </button>
           </div>
