@@ -1,11 +1,21 @@
 /**
  * Unified AI Service for ENT 3805: Designing Corporate-Startup Synergies
+ * BML Munjal University (Hero Group Initiative) | School of Engineering & Technology
+ * Faculty Lead: Prof. Kulbir Lamba (kulbir.lamba@bmu.edu.in)
  * 
- * Embedded with Prof. Kulbir Singh Lamba's course curriculum & core literature:
- * 1. Yoon & Hughes (HBR 2016): "Big Companies Should Collaborate with Startups"
- * 2. Weiblen & Chesbrough (CMR 2015): "Engaging with Startups to Enhance Corporate Innovation"
- * 3. Classroom Slides on Open Innovation: Outside-In (P&G Connect + Develop, Lego Ideas) 
- *    vs Inside-Out (Philips IP Health Tech Licensing, ISRO Space Tech Transfer)
+ * Embedded with official ENT 3805 Course Handout literature, frameworks & session roadmap:
+ * 1. Chesbrough, H. W. (2003): Open Innovation - The new imperative for creating and profiting from technology
+ * 2. Yoon, E., & Hughes, S. (HBR 2016): Big Companies Should Collaborate with Startups (Innovation Asymmetry, Organ Rejection, Missionary vs Mercenary)
+ * 3. Weiblen & Chesbrough (CMR 2015): 4 Engagement Typologies (CVC, Corporate Incubation, Outside-In Startup Programs, Inside-Out Platform Programs)
+ * 4. BioNTech + Pfizer (Covid-19 mRNA tech agility + enterprise manufacturing scale & distribution)
+ * 5. Carlsberg and the Green Fiber Bottle (Sustainability Through Open Innovation Consortium)
+ * 6. Maruti Suzuki Incubation Program for Startups & Global Capability Centers (GCCs) in India
+ * 7. Csik & Torres Junior (J Int Entrep 2024): Emergent Way - Corporate-Startup Synergies
+ * 8. World Economic Forum (2018): Collaboration between Start-ups and Corporates - Mutual Understanding
+ * 9. Dizdarevic, van de Vrande & Jansen (2023): When Opposites Attract - Review & Synthesis
+ * 10. Gutmann & Lang (IEEE 2022): Unlocking the Magic of Corporate-Startup Collaboration
+ * 11. Ecosystem Platforms: TCS Co-Innovation Network (COIN) & HCL Technologies Ecosystem Innovation Platform
+ * 12. Burns (2020): Corporate Entrepreneurship and Innovation
  */
 
 export const MODEL_METADATA = {
@@ -15,20 +25,38 @@ export const MODEL_METADATA = {
 };
 
 const COURSE_PEDAGOGICAL_CONTEXT = `
-COURSE CONTEXT: ENT 3805 - Designing Corporate-Startup Synergies (BML Munjal University)
-CORE THEORETICAL FRAMEWORKS:
-1. Yoon & Hughes (HBR 2016):
-   - Innovation Asymmetry: Startups excel at giving birth to proofs of concept (POCs) & discovering latent demand (58% succeed in market need). Corporates excel at scaling, procurement, distribution, and manufacturing.
-   - Corporate Organ Rejection: Occurs when bureaucratic enterprises absorb early ventures too aggressively.
-   - Mindset Alignment: Missionary (mission-driven, founder DNA preservation, e.g. Healthy Choice, Boulder Brands / Udi's) vs Mercenary (transactional check-writing, deal books).
-2. Weiblen & Chesbrough (CMR 2015) 4 Engagement Typologies:
-   - Corporate Venture Capital (Equity, Outside-In): Strategic insights + financial upside (e.g. Google Ventures/Nest, Intel Capital).
-   - Corporate Incubation (Equity, Inside-Out): Commercializing internal non-core misfit R&D via spin-offs (e.g. Xerox PARC, Lucent, Bosch Startup Platform).
-   - Startup Programs - Outside-In (Non-Equity): Rapid 12-week POC acceleration, technology intake, venture clienting (e.g. AT&T Foundry, Siemens TTB).
-   - Startup Programs - Platform (Non-Equity, Inside-Out): Expanding corporate platforms via startup ecosystems (e.g. SAP Startup Focus with HANA, PayPal Startup Blueprint, Microsoft BizSpark).
-3. Classroom Slides Open Innovation Matrix:
-   - Outside-In: Sourced externally, imported into corporate portfolio to reduce R&D cost & time (e.g. P&G Connect + Develop, Lego Ideas).
-   - Inside-Out: Sourced internally, out-licensed or transferred externally to monetize unutilized corporate IP & build market ecosystems (e.g. Philips IP Health Tech Licensing, ISRO Space Technology Transfer).
+COURSE: ENT 3805 - Designing Corporate-Startup Synergies (BML Munjal University)
+INSTRUCTOR: Prof. Kulbir Lamba (kulbir.lamba@bmu.edu.in)
+COURSE OUTCOMES (COs):
+- CO1 (BL-2 Comprehension): Understand and analyze key concepts and frameworks for corporate-startup collaboration.
+- CO2 (BL-4 Analysis): Analyze challenges and success factors in corporate-startup partnerships using real-world cases.
+- CO3 (BL-6 Creation): Design a practical blueprint for an effective corporate-startup partnership for different contexts of innovation.
+
+CORE THEORETICAL FRAMEWORKS & CASES:
+1. Core Innovation Asymmetry & The Paradox:
+   - Paradox: Corporates possess capital, global procurement, manufacturing scale, and distribution channels, but suffer from bureaucratic inertia, risk aversion, and internal "organ rejection." Startups possess rapid zero-to-one exploration agility and excel at validating latent market demand (58% of tech ventures pinpoint real market pain points), but face capital starvation and lack scaling muscle.
+   - Foundation Example: BioNTech providing pioneering mRNA tech agility while Pfizer brought clinical trial mastery, global cold-chain logistics, and massive manufacturing scale during Covid-19.
+
+2. Open Innovation Matrix (Chesbrough, 2003; Classroom Slides):
+   - Outside-In: Sourcing external startup solutions, patents, and POCs into the corporate funnel to drastically compress R&D cycle times and development spend (e.g., P&G Connect + Develop, Lego Ideas).
+   - Inside-Out: Commercializing and out-licensing underutilized internal corporate IP, spin-offs, and platforms into the wider ecosystem (e.g., Philips HealthTech IP licensing, ISRO Space Tech Transfer).
+
+3. Weiblen & Chesbrough (CMR 2015) 4 Engagement Typologies:
+   - Corporate Venture Capital (CVC) [Equity, Outside-In]: Minority equity stakes for strategic market intelligence and future optionality (e.g., Intel Capital, Google Ventures/Nest).
+   - Corporate Incubation [Equity, Inside-Out]: Nurturing internal non-core inventions into venture spin-offs (e.g., Xerox PARC, Bosch Startup Platform).
+   - Outside-In Startup Programs [Non-Equity]: Rapid 12-week challenge pilots, sandboxes, and venture clienting (e.g., AT&T Foundry, Siemens TTB).
+   - Inside-Out Platform Programs [Non-Equity]: Opening corporate developer APIs/platforms to third-party ventures (e.g., SAP Startup Focus on HANA, Microsoft BizSpark, PayPal Blueprint).
+
+4. Mindset & Cultural Alignment (Yoon & Hughes, HBR 2016):
+   - Missionary vs. Mercenary: Missionary alignment preserves founder purpose and cultural autonomy (e.g., Boulder Brands / Udi's gluten-free, ConAgra / Healthy Choice); mercenary alignment treats startups as disposable vendor contracts.
+   - Preventing "Organ Rejection": Establishing organizational shock absorbers (e.g. specialized liaison officers, innovation hubs) to protect early ventures from standard corporate procurement and legal delays.
+
+5. Real-World Case Studies (ENT 3805 Syllabus):
+   - Carlsberg Green Fiber Bottle: Open innovation consortium uniting corporate brand owner, packaging startup (Paboco / ecoXpac), and materials scientists for sustainable packaging.
+   - Maruti Suzuki Incubation Program for Startups (MISA) & Indian GCCs: How automotive leaders leverage India's deep-tech startup ecosystem for manufacturing automation, logistics, and connected vehicles.
+   - TCS Co-Innovation Network (COIN) & HCL Technologies Ecosystem Platform: Enterprise platform models integrating startups, universities, venture funds, and enterprise clients.
+   - Goal Alignment & KPIs: Reconciling startup equity upside and speed with corporate quarterly EBITDA and compliance metrics ("Is CVC Right for Your Startup?").
+   - Post-Pilot Sustainability: Sustaining momentum after the initial excitement ("After the Honeymoon Ends: Making Corporate-Startup Relationships Work").
 `;
 
 const REFLECTION_PROMPT = `${COURSE_PEDAGOGICAL_CONTEXT}

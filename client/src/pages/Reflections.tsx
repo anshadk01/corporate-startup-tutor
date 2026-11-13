@@ -27,6 +27,7 @@ import { EmptyState } from "../components/common/EmptyState.tsx";
 import { Badge } from "../components/common/Badge.tsx";
 import { ProgressRing } from "../components/common/ProgressRing.tsx";
 import { useMotionSafe } from "../hooks/useMotionSafe.ts";
+import { OFFICIAL_SESSIONS } from "../utils/courseSyllabus.ts";
 
 export const Reflections: React.FC = () => {
   const { user } = useAuth();
@@ -341,28 +342,76 @@ export const Reflections: React.FC = () => {
             </div>
           )}
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div className="space-y-3">
             <div>
-              <label className="font-bold text-slate-700 block mb-1">Session Number (1-13)</label>
-              <input
-                type="number"
-                min={1}
-                max={13}
+              <label className="font-bold text-slate-700 block mb-1">
+                Select Official ENT 3805 Syllabus Session (1 to 13)
+              </label>
+              <select
                 value={sessionNumber}
-                onChange={(e) => setSessionNumber(Number(e.target.value))}
-                className="w-full p-2.5 border border-slate-200 rounded-xl bg-slate-50 font-semibold"
-              />
+                onChange={(e) => {
+                  const num = Number(e.target.value);
+                  setSessionNumber(num);
+                  const matched = OFFICIAL_SESSIONS.find((s) => s.sessionNumber === num);
+                  if (matched) {
+                    setSessionTitle(matched.title);
+                  }
+                }}
+                className="w-full p-2.5 border border-slate-200 rounded-xl bg-white font-medium text-xs text-slate-800"
+              >
+                {OFFICIAL_SESSIONS.map((s) => (
+                  <option key={s.sessionNumber} value={s.sessionNumber}>
+                    Session {s.sessionNumber}: {s.title} ({s.courseOutcome})
+                  </option>
+                ))}
+              </select>
             </div>
-            <div className="sm:col-span-2">
+
+            <div>
               <label className="font-bold text-slate-700 block mb-1">Session Title / Topic</label>
               <input
                 type="text"
                 placeholder="e.g. Open Innovation Paradigms: Outside-In vs Inside-Out"
                 value={sessionTitle}
                 onChange={(e) => setSessionTitle(e.target.value)}
-                className="w-full p-2.5 border border-slate-200 rounded-xl"
+                className="w-full p-2.5 border border-slate-200 rounded-xl bg-slate-50 font-semibold"
               />
             </div>
+
+            {/* Syllabus Helper Card */}
+            {(() => {
+              const currentSess = OFFICIAL_SESSIONS.find((s) => s.sessionNumber === sessionNumber);
+              if (!currentSess) return null;
+              return (
+                <div className="p-3 bg-blue-50/60 border border-blue-200/80 rounded-xl space-y-1.5">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-bold text-blue-900">
+                      Syllabus Focus: {currentSess.bloomsLevel} • {currentSess.courseOutcome}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        const template = `Class discussion on ${currentSess.title}.\n${
+                          currentSess.preRead ? `Pre-read case analysis: ${currentSess.preRead}.\n` : ""
+                        }Key concepts covered: ${currentSess.keyTopics.join(", ")}.`;
+                        setStudentInput((prev) => (prev ? `${prev}\n\n${template}` : template));
+                      }}
+                      className="text-[10px] font-bold text-blue-700 hover:text-blue-900 underline"
+                    >
+                      + Insert Syllabus Topics
+                    </button>
+                  </div>
+                  {currentSess.preRead && (
+                    <p className="text-[11px] text-amber-800 font-medium">
+                      📖 Pre-Read: {currentSess.preRead}
+                    </p>
+                  )}
+                  <p className="text-[10px] text-slate-600">
+                    Topics: {currentSess.keyTopics.join(" • ")}
+                  </p>
+                </div>
+              );
+            })()}
           </div>
 
           <div>

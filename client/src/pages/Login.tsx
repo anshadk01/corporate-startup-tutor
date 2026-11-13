@@ -82,14 +82,29 @@ export const Login: React.FC = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
             <button
-              onClick={() => handleQuickLogin("instructor.demo@university.edu")}
+              onClick={() => handleQuickLogin("kulbir.lamba@bmu.edu.in")}
               disabled={loading}
               className="p-2.5 rounded-xl bg-slate-700/60 hover:bg-slate-700 border border-slate-600/60 text-left transition flex items-start space-x-2 sm:col-span-2"
             >
               <ShieldCheck className="w-4 h-4 text-purple-400 mt-0.5 flex-shrink-0" />
               <div>
-                <p className="text-xs font-bold text-white leading-tight">Prof. Elena Rostova (Course Lead)</p>
-                <p className="text-[10px] text-slate-400">instructor.demo@university.edu • Full Cohort Oversight & Audits</p>
+                <p className="text-xs font-bold text-white leading-tight">Prof. Kulbir Lamba (Course Lead)</p>
+                <p className="text-[10px] text-slate-400">kulbir.lamba@bmu.edu.in • Full Cohort Oversight, Audits & Grading</p>
+              </div>
+            </button>
+
+            <button
+              onClick={() => {
+                setEmail("anshadhikari111@gmail.com");
+                setPassword("Gymislove@1");
+              }}
+              disabled={loading}
+              className="p-2.5 rounded-xl bg-slate-700/60 hover:bg-slate-700 border border-slate-600/60 text-left transition flex items-start space-x-2"
+            >
+              <UserCheck className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
+              <div>
+                <p className="text-xs font-bold text-white leading-tight">Ansh Adhikari</p>
+                <p className="text-[10px] text-slate-400">anshadhikari111@gmail.com • Group 09</p>
               </div>
             </button>
 
@@ -98,22 +113,10 @@ export const Login: React.FC = () => {
               disabled={loading}
               className="p-2.5 rounded-xl bg-slate-700/60 hover:bg-slate-700 border border-slate-600/60 text-left transition flex items-start space-x-2"
             >
-              <UserCheck className="w-4 h-4 text-emerald-400 mt-0.5 flex-shrink-0" />
-              <div>
-                <p className="text-xs font-bold text-white leading-tight">Alex Rivera</p>
-                <p className="text-[10px] text-slate-400">STU-DEMO-01 • Group 01 Mobility</p>
-              </div>
-            </button>
-
-            <button
-              onClick={() => handleQuickLogin("jordan.demo@university.edu")}
-              disabled={loading}
-              className="p-2.5 rounded-xl bg-slate-700/60 hover:bg-slate-700 border border-slate-600/60 text-left transition flex items-start space-x-2"
-            >
               <UserCheck className="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" />
               <div>
-                <p className="text-xs font-bold text-white leading-tight">Jordan Chen</p>
-                <p className="text-[10px] text-slate-400">STU-DEMO-02 • Group 01 Mobility</p>
+                <p className="text-xs font-bold text-white leading-tight">Alex Rivera</p>
+                <p className="text-[10px] text-slate-400">alex.demo@university.edu • Group 01</p>
               </div>
             </button>
 

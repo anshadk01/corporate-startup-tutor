@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import { LogOut, ChevronDown, Check, Sparkles, Bot, ShieldCheck } from "lucide-react";
+import { LogOut, ChevronDown, Check, Sparkles, Bot, ShieldCheck, GraduationCap } from "lucide-react";
 import { useAuth } from "../../context/AuthContext.tsx";
 import { Badge } from "../common/Badge.tsx";
+import { CourseHandoutModal } from "../common/CourseHandoutModal.tsx";
 
 export const TopBar: React.FC = () => {
   const { user, logout, switchDemoUser } = useAuth();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [switching, setSwitching] = useState(false);
+  const [handoutOpen, setHandoutOpen] = useState(false);
 
   const isInstructor = user?.role === "INSTRUCTOR";
   const groupObj = typeof user?.groupId === "object" ? user?.groupId : null;
@@ -17,11 +19,10 @@ export const TopBar: React.FC = () => {
   const isDevMode = import.meta.env.DEV;
 
   const demoAccounts = [
-    { role: "INSTRUCTOR", name: "Prof. Elena Rostova", email: "instructor.demo@university.edu", label: "Course Faculty Lead" },
-    { role: "STUDENT", name: "Alex Rivera", email: "alex.demo@university.edu", label: "Group 01 Mobility Lead" },
-    { role: "STUDENT", name: "Jordan Chen", email: "jordan.demo@university.edu", label: "Group 01 Member" },
-    { role: "STUDENT", name: "Morgan Patel", email: "morgan.demo@university.edu", label: "Group 02 Enterprise Lead" },
-    { role: "STUDENT", name: "Samira Khan", email: "samira.demo@university.edu", label: "Group 02 Member" },
+    { role: "INSTRUCTOR", name: "Prof. Kulbir Lamba", email: "kulbir.lamba@bmu.edu.in", label: "Course Faculty Lead" },
+    { role: "STUDENT", name: "Ansh Adhikari", email: "anshadhikari111@gmail.com", label: "Group 09 Member" },
+    { role: "STUDENT", name: "Alex Rivera", email: "alex.demo@university.edu", label: "Group 01 Lead" },
+    { role: "STUDENT", name: "Morgan Patel", email: "morgan.demo@university.edu", label: "Group 02 Lead" },
   ];
 
   const handleSwitch = async (email: string) => {
@@ -63,6 +64,19 @@ export const TopBar: React.FC = () => {
 
       {/* Right User & Switcher */}
       <div className="flex items-center space-x-3">
+        {/* Course Handout & Syllabus Guide Button */}
+        <button
+          onClick={() => setHandoutOpen(true)}
+          className="flex items-center space-x-1.5 px-3 py-1.5 text-xs font-bold text-blue-700 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-lg transition shadow-xs"
+          title="View Official ENT 3805 Handout & Roadmap"
+        >
+          <GraduationCap className="w-4 h-4 text-blue-600" />
+          <span className="hidden md:inline">Course Handout</span>
+        </button>
+
+        {/* Course Handout Modal */}
+        <CourseHandoutModal isOpen={handoutOpen} onClose={() => setHandoutOpen(false)} />
+
         {/* Quick Demo Role Switcher - Rendered ONLY in dev mode */}
         {isDevMode && (
           <div className="relative">

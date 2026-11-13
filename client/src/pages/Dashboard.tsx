@@ -13,7 +13,9 @@ import {
   AlertCircle,
   ShieldCheck,
   Bot,
-  ExternalLink
+  ExternalLink,
+  GraduationCap,
+  Award
 } from "lucide-react";
 import { useAuth } from "../context/AuthContext.tsx";
 import api from "../services/api.ts";
@@ -21,10 +23,13 @@ import { Reflection, NewsItem, PromptLog, InstructorDashboardData } from "../typ
 import { formatDate, formatDateTime, getCollaborationColor } from "../utils/formatters.ts";
 import { Badge } from "../components/common/Badge.tsx";
 import { LoadingSpinner } from "../components/common/LoadingSpinner.tsx";
+import { CourseHandoutModal } from "../components/common/CourseHandoutModal.tsx";
+import { COURSE_EVALUATION_COMPONENTS } from "../utils/courseSyllabus.ts";
 
 export const Dashboard: React.FC = () => {
   const { user } = useAuth();
   const isInstructor = user?.role === "INSTRUCTOR";
+  const [handoutOpen, setHandoutOpen] = useState(false);
 
   // Student State
   const [reflections, setReflections] = useState<Reflection[]>([]);
@@ -261,8 +266,11 @@ export const Dashboard: React.FC = () => {
 
   return (
     <div className="space-y-8 animate-in fade-in duration-200">
+      {/* Course Handout Modal */}
+      <CourseHandoutModal isOpen={handoutOpen} onClose={() => setHandoutOpen(false)} />
+
       {/* Student Welcome Banner */}
-      <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 rounded-2xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden">
+      <div className="bg-gradient-to-r from-blue-900 via-indigo-900 to-slate-900 rounded-2xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
         <div className="relative z-10 max-w-2xl">
           <div className="flex items-center space-x-2 text-emerald-400 mb-2">
             <Bot className="w-5 h-5" />
@@ -272,8 +280,55 @@ export const Dashboard: React.FC = () => {
             {groupName} Workspace
           </h1>
           <p className="text-xs sm:text-sm text-slate-300 mt-2">
-            Dedicated academic AI assistant for ENT 3805. Generates session reflections from raw class notes, curates fortnightly corporate-startup news, and maintains complete prompt audit transparency.
+            Dedicated academic AI assistant for ENT 3805 (Prof. Kulbir Lamba). Fulfills Component B: creates session reflections from raw class notes, curates fortnightly corporate-startup news, and maintains complete prompt audit transparency.
           </p>
+        </div>
+
+        <div className="relative z-10 flex-shrink-0">
+          <button
+            onClick={() => setHandoutOpen(true)}
+            className="inline-flex items-center space-x-2 px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs backdrop-blur-sm transition shadow-sm"
+          >
+            <GraduationCap className="w-4 h-4 text-emerald-400" />
+            <span>View Course Handout & Rubrics</span>
+          </button>
+        </div>
+      </div>
+
+      {/* Course Evaluation Pattern Ribbon */}
+      <div className="bg-white rounded-2xl border border-slate-200/80 p-4 shadow-xs">
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center space-x-2 text-slate-700">
+            <Award className="w-4 h-4 text-blue-600" />
+            <span className="text-xs font-extrabold uppercase tracking-wider">ENT 3805 Evaluation Components</span>
+          </div>
+          <button
+            onClick={() => setHandoutOpen(true)}
+            className="text-[11px] font-bold text-blue-600 hover:underline"
+          >
+            Full Syllabus (13 Sessions) →
+          </button>
+        </div>
+
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+          {COURSE_EVALUATION_COMPONENTS.map((comp, idx) => (
+            <div
+              key={idx}
+              className={`p-3 rounded-xl border text-left transition ${
+                comp.name.includes("Corporate Startup Tutor")
+                  ? "bg-blue-50/70 border-blue-300 ring-1 ring-blue-400/30"
+                  : "bg-slate-50 border-slate-200/80"
+              }`}
+            >
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-[11px] font-bold text-slate-900 truncate">{comp.name.split(" ")[0]} {comp.name.split(" ")[1]}</span>
+                <span className="text-[11px] font-black text-blue-700 bg-white px-1.5 py-0.5 rounded border border-blue-200">
+                  {comp.weight}
+                </span>
+              </div>
+              <p className="text-[10px] text-slate-500 line-clamp-2">{comp.description}</p>
+            </div>
+          ))}
         </div>
       </div>
 
