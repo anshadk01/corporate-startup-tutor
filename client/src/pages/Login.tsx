@@ -21,12 +21,13 @@ export const Login: React.FC = () => {
 
     try {
       if (isRegister) {
-        await register({ name, email, password, role, groupName, rollNumber });
+        await register({ name: name.trim(), email: email.trim().toLowerCase(), password, role, groupName: groupName.trim(), rollNumber: rollNumber.trim() });
       } else {
-        await login(email, password);
+        await login(email.trim().toLowerCase(), password);
       }
     } catch (err: any) {
-      setError(err.response?.data?.message || "Authentication failed. Please check credentials.");
+      const msg = err.response?.data?.message || err.message || "Authentication failed. Please check credentials.";
+      setError(msg);
     } finally {
       setLoading(false);
     }

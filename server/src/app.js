@@ -19,34 +19,45 @@ app.use(cors());
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
 
-// Health & System Info
-app.get("/api/health", (req, res) => {
+// Health & System Info (Support both /api/health and /health)
+const healthHandler = (req, res) => {
   res.json({
     status: "healthy",
     course: "Designing Corporate-Startup Synergies (ENT 3805)",
     institution: "BML Munjal University",
     timestamp: new Date().toISOString()
   });
-});
+};
+app.get("/api/health", healthHandler);
+app.get("/health", healthHandler);
 
 // Demo Reset / Seed endpoint
-app.post("/api/seed", async (req, res) => {
+const seedHandler = async (req, res) => {
   try {
     await seedDatabase();
     res.json({ message: "Database reseeded successfully with ENT 3805 demo data." });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
-});
+};
+app.post("/api/seed", seedHandler);
+app.post("/seed", seedHandler);
 
-// Mount Routes
-app.use("/api/auth", authRoutes);
-app.use("/api/reflections", reflectionRoutes);
-app.use("/api/news", newsRoutes);
-app.use("/api/prompt-logs", promptLogRoutes);
-app.use("/api/groups", groupRoutes);
-app.use("/api/instructor", instructorRoutes);
-app.use("/api/cycles", cycleRoutes);
+// Mount Routes on both /api and root / for client compatibility
+const routes = [
+  ["/auth", authRoutes],
+  ["/reflections", reflectionRoutes],
+  ["/news", newsRoutes],
+  ["/prompt-logs", promptLogRoutes],
+  ["/groups", groupRoutes],
+  ["/instructor", instructorRoutes],
+  ["/cycles", cycleRoutes]
+];
+
+routes.forEach(([path, handler]) => {
+  app.use(`/api${path}`, handler);
+  app.use(path, handler);
+});
 
 // Error Handling Middleware
 app.use((err, req, res, next) => {
